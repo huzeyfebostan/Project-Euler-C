@@ -10,7 +10,7 @@ What is the largest prime factor of the number 600851475143 ?
 int main(void)
 {
   unsigned long long n = 600851475143ULL;
-  unsigned long long i;
+  unsigned long long i; 
 
   for (i = 2ULL; i < n; i++) 
   {
