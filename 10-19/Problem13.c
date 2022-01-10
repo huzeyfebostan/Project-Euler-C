@@ -108,7 +108,7 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 #define N 100
 
-int main()
+int main(void)
 {
 	unsigned long long numbers[100] = {
 		37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
