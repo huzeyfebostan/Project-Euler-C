@@ -133,14 +133,15 @@ int main()
 		22918802058, 77158542502, 72107838435, 20849603980, 53503534226
 	};
 
-	unsigned long long sum = 0;
-	for (unsigned i = 0; i < 100; ++i)
-		sum += numbers[i];
+  unsigned long long sum = 0;
 
-	while (sum > 10000000000)
-		sum /= 10;
+  for (unsigned i = 0; i < 100; i++)
+    sum += numbers[i];
 
-	printf("%llu\n", sum);
+  while (sum > 10000000000)
+    sum /= 10;
 
-	return 0;
+  printf("%llu",sum);
+
+  return  0;
 }
