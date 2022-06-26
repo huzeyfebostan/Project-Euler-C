@@ -7,20 +7,41 @@ Power digit sum
 What is the sum of the digits of the number 2^1000?
 */
 
+#define MAXDIGITS 500
+#define EXPONENT 1000
+
 int main()
 {
-  long long int sum = 2;
-  int number = 0;
+  int largenum[MAXDIGITS] =  {0};
+  int i, j, temp, carry, sum;
 
-  for(int i = 1; i < 1000; i++)
+  largenum [0] = 1;
+
+  for (i = 0; i < EXPONENT; i++)
   {
-    sum = sum * 2;
-    printf("%lld\n",sum);
+    carry = 0;
+
+    for (j = 0; j < MAXDIGITS; j++)
+    {
+      temp = 2 * largenum[j] + carry;
+      carry = 0;
+
+      if (temp > 9)
+      {
+        largenum[j] = temp % 10;
+        carry = temp / 10;
+      }
+      else
+        largenum[j] = temp;
+    }
   }
-  
-  /*while (sum >= 0)
+  sum = 0;
+  for (i = MAXDIGITS - 1; i >= 0; i--)
   {
-    number = sum % 10;
-    sum = sum / 10;
-  }*/
+    printf("%d",largenum[i]);
+    sum += largenum[i];
+  }
+
+  printf("\n%d\n", sum);
+  
 }
