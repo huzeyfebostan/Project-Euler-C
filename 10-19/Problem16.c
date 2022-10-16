@@ -16,7 +16,6 @@ int main()
   int i, j, temp, carry, sum;
 
   largenum [0] = 1;
-
   for (i = 0; i < EXPONENT; i++)
   {
     carry = 0;
@@ -41,7 +40,5 @@ int main()
     printf("%d",largenum[i]);
     sum += largenum[i];
   }
-
   printf("\n%d\n", sum);
-  
 }
